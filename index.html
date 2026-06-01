@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quick Access Panel</title>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body{
+      background: linear-gradient(135deg, #1e3c72, #2a5298);
+      height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+    }
+
+    .container{
+      background:#ffffff;
+      padding:40px;
+      border-radius:20px;
+      box-shadow:0 10px 25px rgba(0,0,0,0.25);
+      text-align:center;
+      width:350px;
+    }
+
+    h1{
+      color:#1e3c72;
+      margin-bottom:10px;
+    }
+
+    p{
+      color:#666;
+      margin-bottom:30px;
+    }
+
+    .btn{
+      display:block;
+      width:100%;
+      padding:15px;
+      margin:12px 0;
+      text-decoration:none;
+      color:white;
+      font-size:18px;
+      font-weight:bold;
+      border-radius:12px;
+      transition:0.3s;
+    }
+
+    .wtp{
+      background:#28a745;
+    }
+
+    .wtp:hover{
+      background:#218838;
+      transform:scale(1.03);
+    }
+
+    .stp{
+      background:#ff9800;
+    }
+
+    .stp:hover{
+      background:#e68900;
+      transform:scale(1.03);
+    }
+
+    .gw{
+      background:#007bff;
+    }
+
+    .gw:hover{
+      background:#0056b3;
+      transform:scale(1.03);
+    }
+
+    footer{
+      margin-top:20px;
+      font-size:13px;
+      color:#888;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <h1>Geographic Information System</h1>
+    <p>Select a service below</p>
+
+    <a class="btn wtp"
+       href="https://script.google.com/macros/s/AKfycbwzNGcApvLmmZJ52kFdU33CBvWFghSlgiInECwXxw31NLfBy4KNtR2nrIs2CekvEKUK_Q/exec"
+       target="_blank">
+       WTP
+    </a>
+
+    <a class="btn stp"
+       href="https://script.google.com/macros/s/AKfycbz5jzt8gXQzcndlCOPZiPmM1QQ2sshjKeWPv-vMPYTAtiHAWX6N22V26lH0CGVIJ5pl/exec"
+       target="_blank">
+       STP
+    </a>
+
+    <a class="btn gw"
+       href="https://script.google.com/macros/s/AKfycbzDJCHHykLlzACUpd9l-qeNmUX5uE9l1M7PT4YG12nBVL7U8FVZ_HSSP-dn1raln0c6zw/exec"
+       target="_blank">
+       GW
+    </a>
+
+    <footer>
+      © 2026 Quick Access Panel
+    </footer>
+  </div>
+
+</body>
+</html>
+
