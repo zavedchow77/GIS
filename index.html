@@ -10,7 +10,7 @@
   margin:0;
   padding:0;
   box-sizing:border-box;
-  font-family:Arial, sans-serif;
+  font-family:Arial,sans-serif;
 }
 
 body{
@@ -24,17 +24,16 @@ body{
 
 .container{
   background:#fff;
+  width:min(380px,90vw);
   padding:35px;
   border-radius:20px;
-  box-shadow:0 10px 25px rgba(0,0,0,.25);
   text-align:center;
-  width:min(380px,90vw);
+  box-shadow:0 10px 25px rgba(0,0,0,.25);
 }
 
 h1{
   color:#1e3c72;
   margin-bottom:10px;
-  font-size:28px;
 }
 
 p{
@@ -47,9 +46,13 @@ p{
   width:100%;
   max-width:280px;
   border-radius:14px;
-  margin:10px auto 25px;
-  display:block;
-  box-shadow:0 5px 15px rgba(0,0,0,.15);
+  margin-bottom:25px;
+  cursor:pointer;
+  transition:.3s;
+}
+
+.gis-gif:hover{
+  transform:scale(1.03);
 }
 
 .btn{
@@ -57,48 +60,52 @@ p{
   width:100%;
   padding:15px;
   margin:12px 0;
+  border-radius:12px;
+  color:#fff;
   text-decoration:none;
-  color:white;
   font-size:18px;
   font-weight:bold;
-  border-radius:12px;
-  transition:
-    transform .3s,
-    background .3s;
+  transition:.3s;
 }
+
+.wtp{background:#28a745;}
+.stp{background:#ff9800;}
+.gw{background:#007bff;}
 
 .btn:hover{
   transform:scale(1.03);
 }
 
-.wtp{
-  background:#28a745;
-}
-
-.wtp:hover{
-  background:#218838;
-}
-
-.stp{
-  background:#ff9800;
-}
-
-.stp:hover{
-  background:#e68900;
-}
-
-.gw{
-  background:#007bff;
-}
-
-.gw:hover{
-  background:#0056b3;
-}
-
 footer{
   margin-top:20px;
-  font-size:13px;
   color:#888;
+  font-size:13px;
+}
+
+/* Fullscreen viewer */
+.viewer{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.92);
+  justify-content:center;
+  align-items:center;
+  z-index:9999;
+}
+
+.viewer img{
+  max-width:95%;
+  max-height:95%;
+  border-radius:10px;
+}
+
+.close{
+  position:absolute;
+  top:20px;
+  right:30px;
+  color:white;
+  font-size:40px;
+  cursor:pointer;
 }
 </style>
 </head>
@@ -110,30 +117,28 @@ footer{
 <h1>Geographic Information System</h1>
 <p>Select a service below</p>
 
-<!-- GIF from GitHub -->
+<!-- Clickable GIF -->
 <img
+class="gis-gif"
 src="https://raw.githubusercontent.com/zavedchow77/GIS/main/GIF_0.5.gif"
 alt="GIS Animation"
-class="gis-gif">
+onclick="openViewer()">
 
-<a
-class="btn wtp"
+<a class="btn wtp"
 href="https://script.google.com/macros/s/AKfycbwzNGcApvLmmZJ52kFdU33CBvWFghSlgiInECwXxw31NLfBy4KNtR2nrIs2CekvEKUK_Q/exec"
 target="_blank"
 rel="noopener noreferrer">
 WTP
 </a>
 
-<a
-class="btn stp"
+<a class="btn stp"
 href="https://script.google.com/macros/s/AKfycbz5jzt8gXQzcndlCOPZiPmM1QQ2sshjKeWPv-vMPYTAtiHAWX6N22V26lH0CGVIJ5pl/exec"
 target="_blank"
 rel="noopener noreferrer">
 STP
 </a>
 
-<a
-class="btn gw"
+<a class="btn gw"
 href="https://script.google.com/macros/s/AKfycbzDJCHHykLlzACUpd9l-qeNmUX5uE9l1M7PT4YG12nBVL7U8FVZ_HSSP-dn1raln0c6zw/exec"
 target="_blank"
 rel="noopener noreferrer">
@@ -145,6 +150,26 @@ GW
 </footer>
 
 </div>
+
+<!-- Fullscreen GIF -->
+<div class="viewer" id="viewer" onclick="closeViewer()">
+<span class="close">&times;</span>
+
+<img
+src="https://raw.githubusercontent.com/zavedchow77/GIS/main/GIF_0.5.gif"
+alt="Full GIF">
+
+</div>
+
+<script>
+function openViewer(){
+  document.getElementById("viewer").style.display="flex";
+}
+
+function closeViewer(){
+  document.getElementById("viewer").style.display="none";
+}
+</script>
 
 </body>
 </html>
